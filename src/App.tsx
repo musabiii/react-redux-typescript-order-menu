@@ -1,26 +1,54 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Header from "./components/header";
+import Welcome from "./components/welcome";
+import Burgers from "./components/burgers";
+import styled from "styled-components";
+import { pages, stateTypes } from "./ts/interfaces";
+import { connect } from "react-redux";
+import Sauses from "./components/sauses";
+import Drinks from "./components/drinks";
+import Cart from "./components/cart";
+import Footer from "./components/footer";
 
-function App() {
+
+
+const AppBlock = styled.div`
+  background-color: #fcf155;
+  max-width: 1077px;
+  margin: 5vh auto;
+  height: 600px;
+  border: 2px solid black;
+`;
+
+const App: React.FC<{ page: string }> = ({ page }) => {
+  let pageComponent: {};
+
+  if (page === pages.welcome) {
+    pageComponent = <Welcome />;
+  } else if (page === pages.burgers) {
+    pageComponent = <Burgers />;
+  } else if (page === pages.sauses) {
+    pageComponent = <Sauses />;
+  } else if (page === pages.drinks) {
+    pageComponent = <Drinks />;
+  } else {
+    pageComponent = <Cart />;
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppBlock className="app">
+      <Header />
+      {pageComponent}
+      <Footer/>
+    </AppBlock>
   );
-}
+};
 
-export default App;
+const mapStateToProps = (state: stateTypes) => {
+  return {
+    page: state.page,
+  };
+};
+
+export default connect(mapStateToProps)(App);
