@@ -27,32 +27,32 @@ const Drinks: React.FC<drinksProps> = ({drinks,drinksLoaded}) => {
     drinksLoaded([
       {
         id:1,
-        title:'drink',
+        title:'pepsi',
         price:42,
         img:'drink1'
       },      {
         id:2,
-        title:'drink',
+        title:'cola',
         price:42,
         img:'drink2'
       },      {
         id:3,
-        title:'drink',
+        title:'mirinda',
         price:42,
         img:'drink3'
       },      {
         id:4,
-        title:'drink',
+        title:'dr pepper',
         price:42,
         img:'drink4'
       },      {
         id:5,
-        title:'drink',
+        title:'schweppes',
         price:42,
         img:'drink5'
       },      {
         id:6,
-        title:'drink',
+        title:'fanta',
         price:42,
         img:'drink6'
       },

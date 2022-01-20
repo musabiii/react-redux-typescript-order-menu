@@ -10,6 +10,11 @@ const ProductBlock = styled.div`
   height: 150px;
   border: 1px solid black;
   flex: 1 1 30%;
+
+  span {
+    background-color: yellow;
+    padding: 0 5px;
+  }
   img {
     object-fit: contain;
     width: 100%;
@@ -46,7 +51,7 @@ const Product: React.FC<productProps> = ({ id, title, price, img, adjustqty,page
     <ProductBlock className="product" onClick={handleClick}>
         <img src={path} alt="" />
         <div>
-        {title}
+        {title} <span>{price} $</span>
         </div>
     </ProductBlock>
   );

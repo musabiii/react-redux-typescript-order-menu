@@ -23,37 +23,37 @@ const Burgers: React.FC<burgersProps> = ({ burgers, burgersLoaded }) => {
   useEffect(() => {
     burgersLoaded([
       {
-        title: "burger",
+        title: "breakfast",
         id: 1,
         price: 123,
         img:'burger1'
       },
       {
-        title: "burger",
+        title: "brunch",
         id: 2,
         price: 122,
         img:'burger2'
       },
       {
-        title: "burger",
+        title: "lunch",
         id: 3,
         price: 123,
         img:'burger3'
       },
       {
-        title: "burger",
+        title: "dinner",
         id: 4,
         price: 122,
         img:'burger4'
       },
       {
-        title: "burger",
+        title: "supper",
         id: 5,
         price: 123,
         img:'burger5'
       },
       {
-        title: "burger",
+        title: "night snack",
         id: 6,
         price: 122,
         img:'burger6'
